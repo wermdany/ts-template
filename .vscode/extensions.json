@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "zhuangtongfa.material-theme",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "streetsidesoftware.code-spell-checker",
+    "dbaeumer.vscode-eslint"
+  ]
+}
