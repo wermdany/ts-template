@@ -45,7 +45,7 @@ async function init() {
   const author = repository.match(repositoryRE)[3];
   const readFile = await fs.readFile(resolve(indexFile));
   const string = readFile.toString("utf-8");
-  const output = string.replaceAll(origin, name);
+  const output = string.replace(new RegExp(origin,"g"), name);
 
   pkg.repository.url = repository;
   pkg.homepage = repository + "#readme";
