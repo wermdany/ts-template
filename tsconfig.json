@@ -5,7 +5,7 @@
     "outDir": "dist",
     "sourceMap": false,
     "noEmit": true,
-    "target": "esnext",
+    "target": "es2015",
     "module": "esnext",
     "moduleResolution": "node",
     "allowJs": false,
