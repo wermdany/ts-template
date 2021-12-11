@@ -112,9 +112,7 @@ function createBuildConfig(format, output, plugins = []) {
 function createReplacePlugin(isProduction, isBundlerESMBuild, isTest) {
   const replacements = {
     __VERSION__: `"${pkg.version}"`,
-    __DEV__: isBundlerESMBuild
-      ? `(process.env.NODE_ENV !== 'production')`
-      : JSON.stringify(!isProduction),
+    __DEV__: isBundlerESMBuild ? `(process.env.NODE_ENV !== 'production')` : JSON.stringify(!isProduction),
     __TEST__: isTest
   };
   return replace({

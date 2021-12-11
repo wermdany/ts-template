@@ -17,8 +17,7 @@ const args = minimist(process.argv.slice(2));
 
 const analyzer = args.a || args.analyzer || JSON.parse(env.ANALYZER) || false;
 
-const sourcemap =
-  args.s || args.sourcemap || JSON.parse(env.SOURCE_MAP) || false;
+const sourcemap = args.s || args.sourcemap || JSON.parse(env.SOURCE_MAP) || false;
 
 const inspect = args.i || args.inspect || false;
 
@@ -58,9 +57,7 @@ async function build() {
     [
       "-c",
       "--environment",
-      [sourcemap ? `SOURCE_MAP:true` : ``, analyzer ? `ANALYZER:true` : ``]
-        .filter(Boolean)
-        .join(",")
+      [sourcemap ? `SOURCE_MAP:true` : ``, analyzer ? `ANALYZER:true` : ``].filter(Boolean).join(",")
     ],
     { stdio: "inherit" }
   );

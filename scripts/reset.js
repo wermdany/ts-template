@@ -25,8 +25,7 @@ async function init() {
     name: "repository",
     message: "请输入你的项目 git 地址"
   });
-  const repositoryRE =
-    /^(https?:\/\/)?(www\.)?[\w\\-\d]+\.[a-zA-Z]+\/([\w\d\\-]+)\/[\w\d\\-]+$/;
+  const repositoryRE = /^(https?:\/\/)?(www\.)?[\w\\-\d]+\.[a-zA-Z]+\/([\w\d\\-]+)\/[\w\d\\-]+$/;
 
   if (!repositoryRE.test(repository)) {
     throw Error("请输入合法的项目仓库地址！");
@@ -45,7 +44,7 @@ async function init() {
   const author = repository.match(repositoryRE)[3];
   const readFile = await fs.readFile(resolve(indexFile));
   const string = readFile.toString("utf-8");
-  const output = string.replace(new RegExp(origin,"g"), name);
+  const output = string.replace(new RegExp(origin, "g"), name);
 
   pkg.repository.url = repository;
   pkg.homepage = repository + "#readme";
